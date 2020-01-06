@@ -417,17 +417,7 @@
       <div class="row">
         <h1 class="section-title wow fadeInLeft animated" data-wow-delay=".6s"><span>Hire</span><br>or Contact <br> Me</h1>
         <div class="col-sm-6 col-md-6 wow fadeInLeft animated" data-wow-delay="1.4s">
-	  <?php $name = $_POST['name'];
-		$email = $_POST['email'];
-		$message = $_POST['subject'];
-		$formcontent="From: $name \n Message: $subject";
-		$recipient = "joshi.gaurav@sitpune.edu.in";
-		$message = "Contact Form";
-		$mailheader = "From: $email \r\n";
-		mail($recipient, $message, $formcontent, $mailheader) or die("Error!");
-		echo "Thank You!";
-		?>
-          <form action="mail.php" method="post" name="contact" enctype="text/plain">
+          <form action="mail.php" method="post" name="contact">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-user"></i></span>
               <input type="text" name="name" class="form-control" placeholder="Your name">

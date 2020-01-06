@@ -18,7 +18,7 @@
   
   <!--Fonts-->
   <link rel="stylesheet" media="screen" href="assets/fonts/font-awesome/font-awesome.min.css">
-
+	
   <!-- Extras -->
   <link rel="stylesheet" type="text/css" href="assets/extras/animate.css">
   <link rel="stylesheet" type="text/css" href="assets/extras/lightbox.css">
@@ -409,7 +409,7 @@
       </div>
     </div>
   </section>
-  <!-- Blog Section Start -->
+  <!-- Blog Section End -->
 
   <!-- Feedback Section Start -->
   <section id="feedback">
@@ -417,7 +417,17 @@
       <div class="row">
         <h1 class="section-title wow fadeInLeft animated" data-wow-delay=".6s"><span>Hire</span><br>or Contact <br> Me</h1>
         <div class="col-sm-6 col-md-6 wow fadeInLeft animated" data-wow-delay="1.4s">
-          <form action="" name="contact">
+	  <?php $name = $_POST['name'];
+		$email = $_POST['email'];
+		$message = $_POST['subject'];
+		$formcontent="From: $name \n Message: $subject";
+		$recipient = "joshi.gaurav@sitpune.edu.in";
+		$message = "Contact Form";
+		$mailheader = "From: $email \r\n";
+		mail($recipient, $message, $formcontent, $mailheader) or die("Error!");
+		echo "Thank You!";
+		?>
+          <form action="mail.php" method="post" name="contact" enctype="text/plain">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-user"></i></span>
               <input type="text" name="name" class="form-control" placeholder="Your name">
@@ -434,7 +444,7 @@
               <span class="input-group-addon"><i class="fa fa-comments"></i></span>
               <textarea name="message" class="form-control large" placeholder="Message"></textarea>
             </div>
-            <button type="submit" class="btn btn-green"><i class="fa fa-envelope-o"></i>Send</button>
+            <button type="submit" class="btn btn-green"><i class="fa fa-envelope-o"></i>Send</button><input type="reset" value="Clear">
           </form>
         </div>
         <div class="col-sm-4 col-md-4 col-md-offset-2 wow fadeInRight animated" data-wow-delay="1.4s">

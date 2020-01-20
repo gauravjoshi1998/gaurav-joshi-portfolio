@@ -415,6 +415,27 @@ img {
   border: none;
 }
 /* Testimonial Section End */
+
+/*Internships section start */
+#internships .column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+#internships .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#internships @media screen and (max-width: 500px) {
+  .column {
+    width: 100%;
+  }
+}
+/*Internship section ends*/
+
 /* Clients Section Start */
 #clients .section-title i {
   color: #82bc00;

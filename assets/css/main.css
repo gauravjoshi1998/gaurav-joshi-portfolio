@@ -429,11 +429,11 @@ img {
   display: table;
 }
 
-#internships @media screen and (max-width: 200000px) {
+/*#internships @media screen and (max-width: 200000px) {
   .column {
     width: 100%;
   }
-}
+}*/
 /*Internship section ends*/
 
 /* Clients Section Start */
